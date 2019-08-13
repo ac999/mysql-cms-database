@@ -7,18 +7,18 @@ services:
     build:
       context: .
       network: host
-    image: mysql/mysql-server
+    image: mysql
     volumes:
-      - ./my.cnf:/etc/my.cnf
+      # - ./my.cnf:/etc/mysql/conf.d/my.cnf
       - ./data:/var/lib/mysql
-      - ./secrets:/etc/certs
+      # - ./secrets:/etc/certs
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_DATABASE: "zoolx"
       MYSQL_USER: "rust_driver"
       MYSQL_PASSWORD: "!xRL9^R7#*7MW=KsgxYXX%kENds-d?Hy"
-      MYSQL_ROOT_PASSWORD: "BQ3!8=5%Pf6rq#7xtLZg+FLRQmK65sq!MV!6*?U*DF"
+      MYSQL_ROOT_PASSWORD: "KV1QN!Us|McNY_u47mp-E+0JKd8aAO3+"
     ports:
       - 3306:3306
 
